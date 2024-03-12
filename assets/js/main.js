@@ -46,8 +46,8 @@ createApp({
         changeImage(index) {
             this.isActive = index;
         },
-        autoPlaying(value) {
-            value ? this.autoPlayInterval = setInterval(() => { this.next() }, 3000) : clearInterval(this.autoPlayInterval);
+        autoPlaying(isPlay) {
+            isPlay ? this.autoPlayInterval = setInterval(this.next, 3000) : clearInterval(this.autoPlayInterval);
         }
     },
     created() {
