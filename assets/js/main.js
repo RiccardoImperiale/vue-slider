@@ -47,13 +47,8 @@ createApp({
             this.isActive = index;
         },
         autoPlaying(value) {
-            this.isAutoPlaying = value
-
-            if (value == false) {
-                clearInterval(autoPlay);
-            } else {
-                autoPlay = setInterval(() => { this.next() }, 3000);
-            }
+            this.isAutoPlaying = value;
+            value ? autoPlay = setInterval(() => { this.next() }, 3000) : clearInterval(autoPlay);
         }
     },
     created() {
