@@ -42,5 +42,8 @@ createApp({
             this.isActive--;
             (this.isActive < 0) && (this.isActive = this.slides.length - 1);
         },
+        changeImage(index) {
+            this.isActive = index;
+        }
     }
 }).mount('#app')
