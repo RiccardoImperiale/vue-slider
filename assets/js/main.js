@@ -4,7 +4,6 @@ createApp({
     data() {
         return {
             isActive: 0,
-            isAutoPlaying: true,
             autoPlayInterval: null,
             slides: [
                 {
@@ -48,7 +47,6 @@ createApp({
             this.isActive = index;
         },
         autoPlaying(value) {
-            this.isAutoPlaying = value;
             value ? this.autoPlayInterval = setInterval(() => { this.next() }, 3000) : clearInterval(this.autoPlayInterval);
         }
     },
