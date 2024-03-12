@@ -5,6 +5,7 @@ createApp({
         return {
             isActive: 0,
             isAutoPlaying: true,
+            autoPlayInterval: null,
             slides: [
                 {
                     image: './assets/img/01.webp',
@@ -48,10 +49,10 @@ createApp({
         },
         autoPlaying(value) {
             this.isAutoPlaying = value;
-            value ? autoPlay = setInterval(() => { this.next() }, 3000) : clearInterval(autoPlay);
+            value ? this.autoPlayInterval = setInterval(() => { this.next() }, 3000) : clearInterval(this.autoPlayInterval);
         }
     },
     created() {
-        return autoPlay = setInterval(() => { this.next() }, 3000);
+        this.autoPlaying(true);
     }
 }).mount('#app')
